@@ -8,7 +8,7 @@ import os, sys
 # init variables
 coins = []
 coinstring = ''
-min_profit = 0.08
+min_profit = 0.008 # 0,8%
 
 # Get the name of the latest backtest
 with open(os.path.join(sys.path[0], '.last_result.json'), "r") as last_result_file:
