@@ -1,2 +1,5 @@
 # Blacklist template, suffix
-string = ')/.*"\n    ]\n  }\n}'
+string = ')/.*"\n\
+    ]\n\
+  }\n\
+}'
