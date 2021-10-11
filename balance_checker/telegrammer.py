@@ -5,7 +5,7 @@ import config
 import stats
 import datetime
 
-# TODO: Create message-cretion function. Remove hardcoded strings
+# TODO: Create message-creation function. Remove hardcoded strings
 # TODO: Make generic balance checker with exchange as a parameter
 # TODO: Make generic balance function with command as parameter?
 
