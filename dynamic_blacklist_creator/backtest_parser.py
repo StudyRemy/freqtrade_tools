@@ -20,23 +20,24 @@ with open(os.path.join(sys.path[0], '.last_result.json'), "r") as last_result_fi
 with open(os.path.join(sys.path[0], latest_backtest_file), "r") as latest_backtest:
   data = json.load(latest_backtest)
 
-for x in data:
-    if x == 'strategy':
-        y = data[x]
-        for z in y:
-            q = y[z]
-            for r in q:
-                # Get results per pair
-                if r == 'results_per_pair':
-                    s = q[r]
-                    for t in s:
-                        # get pairs with low profit than min_profit and put them in coins-list
-                        if t['profit_mean'] < min_profit:
-                            string = t['key']
-                            coin = string.split("/", 1)
-                            coins.append(coin[0])
+strategies = data["strategy"]
+for strategy_name in strategies:
+    strategy = strategies[strategy_name]
+    results_per_pair = strategy["results_per_pair"]
+    for pair_result in results_per_pair:
 
-# sort coins, add delimiters and put them in a string
+        # get pairs with low profit than min_profit and put them in coins-list
+        if pair_result["profit_mean"] < min_profit:
+            pair = pair_result["key"]
+            coin = pair.split("/", 1)
+            coins.append(coin[0])
+
+# write name of strategy to file for naming blacklist_file in blacklist creator
+# If using strategy-list for backtest it only writes the last strategy
+stratname_file = open(os.path.join(sys.path[0], 'stratname.txt'), 'w')
+stratname_file.write(str(strategy_name))
+        
+ # sort coins, add delimiters and put them in a string
 coins.sort()
 for c in coins:
     coinstring += c + '|'
@@ -48,4 +49,5 @@ file_object.write(coinstring)
 
 # close opened files
 latest_backtest.close()
+stratname_file.close()
 file_object.close()
