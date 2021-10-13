@@ -13,12 +13,14 @@ blacklist_template_second = second.string
 # Get blacklist coins
 with open(os.path.join(sys.path[0], 'to_blacklist.txt'), 'r') as file:
     coinlist = file.read()
+    file.close()
     
 # Get strategy name and currecy
 with open(os.path.join(sys.path[0], 'stratname.txt'), 'r') as file:
     stratname = file.read().splitlines()
     strategy = stratname[0]
     currency = stratname[1]
+    file.close()
 
 # Create blacklist string
 string_to_file = blacklist_template_first + coinlist + blacklist_template_second
