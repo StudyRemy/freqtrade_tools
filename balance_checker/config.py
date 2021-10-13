@@ -9,4 +9,4 @@ HUOBI_API=''
 HUOBI_SECRET=''
 
 TOKEN = ''
-CHAT_ID = ''
+CHAT_ID = 0

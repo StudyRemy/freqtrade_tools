@@ -1,6 +1,6 @@
 from telegram import *
 from telegram.ext import *
-import checker
+import balance_checker as checker
 import config
 import stats
 import datetime
