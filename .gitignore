@@ -130,4 +130,5 @@ dmypy.json
 
 # Personal stuff
 balance_checker/config.py
+balance_checker/crypto_info.csv
 scripts/download_BUSD.sh

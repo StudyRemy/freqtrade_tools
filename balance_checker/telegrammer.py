@@ -101,6 +101,7 @@ def get_balance_today(update: Update, context: CallbackContext) -> None:
     Difference between bots and market is {"{:.2f}".format(diff)}% </pre>', parse_mode=ParseMode.HTML)
 
 def start_telegram_bot():
+    print("running Telegram crypto bot")
     updater = Updater(config.TOKEN)
 
     # TODO: Change commands
