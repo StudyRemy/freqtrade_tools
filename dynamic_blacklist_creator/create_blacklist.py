@@ -8,22 +8,26 @@ import blacklist_suffix as second
 blacklist_template_first = first.string
 blacklist_template_second = second.string
 
+# TODO: Try/catch with empty files? if (os.stat("file").st_size == 0) ...
+
 # Get blacklist coins
 with open(os.path.join(sys.path[0], 'to_blacklist.txt'), 'r') as file:
     coinlist = file.read()
     
-# Get strategy name
+# Get strategy name and currecy
 with open(os.path.join(sys.path[0], 'stratname.txt'), 'r') as file:
-    strategy = file.read()
+    stratname = file.read().splitlines()
+    strategy = stratname[0]
+    currency = stratname[1]
 
 # Create blacklist string
 string_to_file = blacklist_template_first + coinlist + blacklist_template_second
 
 # Creat blacklist filename
-filename = 'blacklist-' + strategy + '.json'
+# TODO: Add exchange to filename
+filename = 'blacklist-' + currency + '-' + strategy + '.json'
 
 # Write blacklist to file_object
-# TODO: Create filename dynamically (eg. exchange/currency/strategy)
 blacklist_file = open(os.path.join(sys.path[0], filename), 'w')
 blacklist_file.write(string_to_file)
 blacklist_file.close()

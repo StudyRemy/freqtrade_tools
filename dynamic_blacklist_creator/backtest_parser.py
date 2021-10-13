@@ -31,11 +31,12 @@ for strategy_name in strategies:
             pair = pair_result["key"]
             coin = pair.split("/", 1)
             coins.append(coin[0])
+            currency = pair.split("/", 2)[1]
 
 # write name of strategy to file for naming blacklist_file in blacklist creator
 # If using strategy-list for backtest it only writes the last strategy
 stratname_file = open(os.path.join(sys.path[0], 'stratname.txt'), 'w')
-stratname_file.write(str(strategy_name))
+stratname_file.write(str(strategy_name) + '\n' + str(currency))
         
  # sort coins, add delimiters and put them in a string
 coins.sort()
