@@ -19,6 +19,7 @@ BL_directory = config.blacklist_directory
 with open(os.path.join(temp_directory, 'to_blacklist.txt'), 'r') as file:
     coinlist = file.read()
     file.close()
+    coinlist = coinlist[:-1]
     
 # Get strategy name and currecy
 with open(os.path.join(temp_directory, 'stratname.txt'), 'r') as file:

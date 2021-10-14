@@ -56,7 +56,7 @@ def get_balance_alltime(update: Update, context: CallbackContext) -> None:
     percent_btc = round((value_btc/value_btc_old - 1)*100, 2)
     diff = percent_tot - percent_btc
     update.message.reply_text(f'<pre>==================================== \n\
-Exchange| 10-14-\'21 |  now  | % diff  \n\
+Exchange| 10-14-\'21|  now  | % diff  \n\
 ---------+---------+-------+-------- \n\
 Binance | ${value_BN_old}    | ${value_BN}  | {"{:.2f}".format(percent_BN)}%   \n\
 Kucoin  | ${value_KC_old}     | ${value_KC}   | {"{:.2f}".format(percent_KC)}%   \n\

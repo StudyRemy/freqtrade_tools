@@ -46,7 +46,6 @@ stratname_file.write(str(strategy_name) + '\n' + str(currency))
 coins.sort()
 for c in coins:
     coinstring += c + '|'
-coinstring = coinstring[:-1]
 
 # write coin string to file
 file_object = open(os.path.join(temp_directory, 'to_blacklist.txt'), 'a')
