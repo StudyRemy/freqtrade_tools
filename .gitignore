@@ -135,3 +135,6 @@ scripts/download_BUSD.sh
 scripts/download_USDT.sh
 scripts/download_KC.sh
 scripts/backtest_USDT_NFI.sh
+scripts/backtest_KC.sh
+scripts/backtest_USDT.sh
+scripts/batch_KC.sh

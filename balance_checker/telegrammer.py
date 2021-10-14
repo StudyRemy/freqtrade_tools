@@ -55,18 +55,18 @@ def get_balance_alltime(update: Update, context: CallbackContext) -> None:
     value_btc_old = stats.get_value('BTC', '2021-10-13')
     percent_btc = round((value_btc/value_btc_old - 1)*100, 2)
     diff = percent_tot - percent_btc
-    update.message.reply_text(f'<pre>    ==================================== \n\
-     Exchange| 10-13-\'21 |  now  | % diff  \n\
-    ---------+---------+-------+-------- \n\
-     Binance | ${value_BN_old}    | ${value_BN}  | {"{:.2f}".format(percent_BN)}%   \n\
-     Kucoin  | ${value_KC_old}     | ${value_KC}   | {"{:.2f}".format(percent_KC)}%   \n\
-     Huobi   | ${value_HB_old}     | ${value_HB}   | {"{:.2f}".format(percent_HB)}%   \n\
-    ---------+---------+-------+-------- \n\
-     Total   | ${value_tot_old}   | ${value_tot} | {"{:.2f}".format(percent_tot)}%   \n\
-    ---------+---------+-------+-------- \n\
-     BTC     | ${value_btc_old}  | ${"{:.0f}".format(value_btc)}| {percent_btc}%   \n\
-    ==================================== \n\n\
-    Difference between bots and market is {"{:.2f}".format(diff)}% </pre>', parse_mode=ParseMode.HTML)
+    update.message.reply_text(f'<pre>==================================== \n\
+Exchange| 10-13-\'21 |  now  | % diff  \n\
+---------+---------+-------+-------- \n\
+Binance | ${value_BN_old}    | ${value_BN}  | {"{:.2f}".format(percent_BN)}%   \n\
+Kucoin  | ${value_KC_old}     | ${value_KC}   | {"{:.2f}".format(percent_KC)}%   \n\
+Huobi   | ${value_HB_old}     | ${value_HB}   | {"{:.2f}".format(percent_HB)}%   \n\
+---------+---------+-------+-------- \n\
+Total   | ${value_tot_old}   | ${value_tot} | {"{:.2f}".format(percent_tot)}%   \n\
+---------+---------+-------+-------- \n\
+BTC     | ${value_btc_old}  | ${"{:.0f}".format(value_btc)}| {percent_btc}%   \n\
+==================================== \n\n\
+Difference between bots and market is {"{:.2f}".format(diff)}% </pre>', parse_mode=ParseMode.HTML)
 
 def get_balance_today(update: Update, context: CallbackContext) -> None:
     today = datetime.date.today().strftime("%Y-%m-%d")
@@ -87,18 +87,18 @@ def get_balance_today(update: Update, context: CallbackContext) -> None:
     value_btc_old = stats.get_value('BTC', today)
     percent_btc = round((value_btc/value_btc_old - 1)*100, 2)
     diff = percent_tot - percent_btc
-    update.message.reply_text(f'<pre>    ==================================== \n\
-     Exchange| midnight| now   | % diff  \n\
-    ---------+---------+-------+-------- \n\
-     Binance | ${value_BN_old}    | ${value_BN}  | {"{:.2f}".format(percent_BN)}%   \n\
-     Kucoin  | ${value_KC_old}     | ${value_KC}   | {"{:.2f}".format(percent_KC)}%   \n\
-     Huobi   | ${value_HB_old}     | ${value_HB}   | {"{:.2f}".format(percent_HB)}%   \n\
-    ---------+---------+-------+-------- \n\
-     Total   | ${value_tot_old}   | ${value_tot} | {"{:.2f}".format(percent_tot)}%   \n\
-    ---------+---------+-------+-------- \n\
-     BTC     | ${value_btc_old}  | ${"{:.0f}".format(value_btc)}| {percent_btc}%   \n\
-    ==================================== \n\n\
-    Difference between bots and market is {"{:.2f}".format(diff)}% </pre>', parse_mode=ParseMode.HTML)
+    update.message.reply_text(f'<pre>==================================== \n\
+Exchange| midnight| now   | % diff  \n\
+---------+---------+-------+-------- \n\
+Binance | ${value_BN_old}    | ${value_BN}  | {"{:.2f}".format(percent_BN)}%   \n\
+Kucoin  | ${value_KC_old}     | ${value_KC}   | {"{:.2f}".format(percent_KC)}%   \n\
+Huobi   | ${value_HB_old}     | ${value_HB}   | {"{:.2f}".format(percent_HB)}%   \n\
+---------+---------+-------+-------- \n\
+Total   | ${value_tot_old}   | ${value_tot} | {"{:.2f}".format(percent_tot)}%   \n\
+---------+---------+-------+-------- \n\
+BTC     | ${value_btc_old}  | ${"{:.0f}".format(value_btc)}| {percent_btc}%   \n\
+==================================== \n\n\
+Difference between bots and market is {"{:.2f}".format(diff)}% </pre>', parse_mode=ParseMode.HTML)
 
 def start_telegram_bot():
     print("running Telegram crypto bot")
