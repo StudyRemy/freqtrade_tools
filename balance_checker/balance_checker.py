@@ -65,17 +65,16 @@ def balance_checker(exchange):
     except ccxt.AuthenticationError as e:
         print(type(e).__name__, e.args, 'Authentication Error (missing API keys, ignoring)')
 
-def check_balance_binance():
-    return round(balance_checker(binance))
-
-def check_balance_kucoin():
-    return round(balance_checker(kucoin))
-
-def check_balance_huobi():
-    return round(balance_checker(huobi))
+def check_exchange(exchange):
+    if exchange == 'binance':
+        return binance
+    elif exchange == 'kucoin':
+        return kucoin
+    elif exchange == 'huobi':
+        return huobi
 
 def check_balance_total():
-    return check_balance_binance() + check_balance_kucoin() + check_balance_huobi()
+    return balance_checker(binance) + balance_checker(kucoin) + balance_checker(huobi)
 
 def check_BTC_value():
     return round(binance.fetch_order_book('BTC/USDT')['bids'][0][0])
