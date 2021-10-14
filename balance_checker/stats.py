@@ -49,6 +49,6 @@ def calculate_BTC_diff(value):
     starter_value = df['BTC value'].astype(float)[0]
     return round((value/starter_value - 1)*100, 2)
 
-#today = datetime.date.today().strftime("%Y-%m-%d")
-
-#print(get_value('binance', today))
+def get_first_day():
+    df = pandas.read_csv('crypto_info.csv')
+    return df['date'][0]
