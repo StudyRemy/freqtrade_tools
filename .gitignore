@@ -132,3 +132,6 @@ dmypy.json
 balance_checker/config.py
 balance_checker/crypto_info.csv
 scripts/download_BUSD.sh
+scripts/download_USDT.sh
+scripts/download_KC.sh
+scripts/backtest_USDT_NFI.sh

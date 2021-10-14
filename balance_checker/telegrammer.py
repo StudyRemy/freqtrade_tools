@@ -34,8 +34,8 @@ def get_balance_total(update: Update, context: CallbackContext) -> None:
     value_tot = value_BN + value_KC + value_HB
     percent_tot = stats.calculate_percent(value_tot, 'total')
     BTC_perc = stats.calculate_BTC_diff(checker.check_BTC_value())
-    diff = round(percent - BTC_perc, 2)
-    update.message.reply_text(f'Your total portfolio is worth ${value}\nThe difference since 13-10-\'21 is {percent}% \n BTC has changed {BTC_perc}% \n The difference between portfolio change and market change is {diff}%')
+    diff = round(percent_tot - BTC_perc, 2)
+    update.message.reply_text(f'Your total portfolio is worth ${value_tot}\nThe difference since 13-10-\'21 is {percent_tot}% \nBTC has changed {BTC_perc}% \nThe difference between portfolio change and market change is {diff}%')
 
 # TODO: Create message-cretion function. Remove hardcoded strings
 def get_balance_alltime(update: Update, context: CallbackContext) -> None:
