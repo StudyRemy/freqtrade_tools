@@ -1,5 +1,4 @@
 import csv
-import os, sys
 import datetime
 import balance_checker as checker
 
@@ -13,9 +12,9 @@ with open(os.path.join(sys.path[0], 'crypto_info.csv'), mode='a', newline='') as
     writer = csv.DictWriter(crypto_file, fieldnames=fieldnames)
 
     # checks exchanges, comment a line if you don't use it
-    binance = checker.check_balance_binance()
-    kucoin = checker.check_balance_kucoin()
-    huobi = checker.check_balance_huobi()
+    binance = round(checker.balance_checker(checker.check_exchange('binance')))
+    kucoin = round(checker.balance_checker(checker.check_exchange('kucoin')))
+    huobi = round(checker.balance_checker(checker.check_exchange('huobi')))
     total = binance + kucoin + huobi
 
     # Run once with line below to create headers (for use in Excel) or use pre-created csv file
