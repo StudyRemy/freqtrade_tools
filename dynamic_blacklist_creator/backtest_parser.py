@@ -7,7 +7,7 @@ import blacklist_create_config as config
 # init variables
 coins = []
 coinstring = ''
-min_profit = 0.008 # 0,8%
+min_profit = config.minimum_profit
 BT_directory = config.backtest_directory
 BL_directory = config.blacklist_directory
 temp_directory = config.temp_directory
