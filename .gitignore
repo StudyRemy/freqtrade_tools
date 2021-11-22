@@ -138,3 +138,4 @@ scripts/backtest_USDT_NFI.sh
 scripts/backtest_KC.sh
 scripts/backtest_USDT.sh
 scripts/batch_KC.sh
+dynamic_blacklist_creator/blacklist_create_config.py
