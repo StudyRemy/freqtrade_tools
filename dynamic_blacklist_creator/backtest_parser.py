@@ -33,9 +33,10 @@ for strategy_name in strategies:
         # get pairs with low profit than min_profit and put them in coins-list
         if pair_result["profit_mean"] < min_profit:
             pair = pair_result["key"]
-            coin = pair.split("/", 1)
-            coins.append(coin[0])
-            currency = pair.split("/", 2)[1]
+            if (pair != "TOTAL"):
+                coin = pair.split("/", 1)
+                coins.append(coin[0])
+                currency = pair.split("/", 2)[1]
 
 # write name of strategy to file for naming blacklist_file in blacklist creator
 # If using strategy-list for backtest it only writes the last strategy
